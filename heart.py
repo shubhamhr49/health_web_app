@@ -1,0 +1,32 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+import joblib
+
+# Load data (assuming it's loaded from a CSV file in this example)
+heart_data = pd.read_csv("E:\Health Web App\dataset\heart.csv")
+
+# Split data into features and target
+X = heart_data.drop(columns="target", axis=1)
+Y = heart_data["target"]
+
+# Split data into training and testing sets
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, stratify=Y, random_state=2)
+
+# Train the Logistic Regression Model
+model = LogisticRegression(max_iter=10000)
+model.fit(X_train, Y_train)
+
+# Calculate accuracy on training data
+X_train_prediction = model.predict(X_train)
+training_data_accuracy = accuracy_score(X_train_prediction, Y_train)
+print("Training Accuracy:", training_data_accuracy)
+
+# Calculate and print accuracy on testing data
+X_test_prediction = model.predict(X_test)
+testing_data_accuracy = accuracy_score(X_test_prediction, Y_test)
+print("Testing Accuracy:", testing_data_accuracy)
+
+# Save the model
+joblib.dump(model, "model_heart.pkl")

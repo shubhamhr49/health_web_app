@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- <link rel="stylesheet" href="/static/main.css">
+    <script src="../static/script.js"></script> -->
+</head>
+
+<body>
+    <aside class="side-bar">
+        <ul>
+            <li>
+                <button onclick="formHandler('heart')">Heart</button>
+            </li>
+            <li>
+                <button onclick="formHandler('diabetes')">Diabetes</button>
+            </li>
+        </ul>
+    </aside>
+    <header>
+        <h1>Health Web App</h1>
+        <h4>Please choose an option</h4>
+    </header>
+    <main>
+        <div id="sidebar" class="sidebar">
+            <ul>
+                <li><span class="icon">&#x1F4BB;</span><span class="text">Heart</span></li>
+                <li><span class="icon">&#x1F4F1;</span><span class="text">Diabetes</span></li>
+                <li><span class="icon">&#x1F4C8;</span><span class="text">Statistics</span></li>
+                <li><span class="icon">&#x1F4DD;</span><span class="text">Notes</span></li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="accordion" id="heart-container">
+                <div class="content">
+                    <h2>Heart Disease Prediction</h2>
+                    <form action="/predict_heart/" method="post">
+                        Age: <input type="number" name="age" required><br>
+                        Sex: <select name="sex">
+                            <option value="0">Female</option>
+                            <option value="1">Male</option>
+                        </select><br>
+                        Chest Pain Type (cp): <input type="number" name="cp" required><br>
+                        Resting Blood Pressure (trestbps): <input type="number" name="trestbps" required><br>
+                        Cholesterol (chol): <input type="number" name="chol" required><br>
+                        Fasting Blood Sugar > 120 mg/dl (fbs): <select name="fbs">
+                            <option value="0">False</option>
+                            <option value="1">True</option>
+                        </select><br>
+                        Resting Electrocardiographic Results (restecg): <input type="number" name="restecg"
+                            required><br>
+                        Maximum Heart Rate Achieved (thalach): <input type="number" name="thalach" required><br>
+                        Exercise Induced Angina (exang): <select name="exang">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select><br>
+                        ST Depression Induced by Exercise Relative to Rest (oldpeak): <input type="number" step="0.01"
+                            name="oldpeak" required><br>
+                        Slope of the Peak Exercise ST Segment (slope): <input type="number" name="slope" required><br>
+                        Number of Major Vessels Colored by Fluoroscopy (ca): <input type="number" name="ca"
+                            required><br>
+                        Thalassemia (thal): <input type="number" name="thal" required><br>
+                        <input type="submit" value="Predict Heart Disease">
+                    </form>
+                </div>
+            </div>
+
+            <div class="accordion" id="diabetes-container">
+                <div class="content">
+                    <h2>Diabetes Prediction</h2>
+                    <form action="/predict_diabetes/" method="post">
+                        Pregnancies: <input type="number" name="Pregnancies" required><br>
+                        Glucose: <input type="number" name="Glucose" required><br>
+                        BloodPressure: <input type="number" name="BloodPressure" required><br>
+                        SkinThickness: <input type="number" name="SkinThickness" required><br>
+                        Insulin: <input type="number" name="Insulin" required><br>
+                        BMI: <input type="number" step="0.01" name="BMI" required><br>
+                        DiabetesPedigreeFunction: <input type="number" step="0.01" name="DiabetesPedigreeFunction"
+                            required><br>
+                        Age: <input type="number" name="Age" required><br>
+                        <input type="submit" value="Predict Diabetes">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

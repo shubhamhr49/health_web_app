@@ -1,0 +1,146 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  /* background-color: #f4f4f4; */
+  background-image: linear-gradient(
+    to right top,
+    #051937,
+    #004d7a,
+    #008793,
+    #00bf72,
+    #a8eb12
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+h2 {
+  color: #333;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+form,
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"],
+label {
+  max-width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+
+input[type="submit"]:hover,
+.btn:hover {
+  background-color: #45a049;
+}
+
+.card {
+  width: clamp(200px, 50%, 900px);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+header {
+  text-align: center;
+  color: #ffffff;
+}
+
+#sidebar {
+  width: 0;
+  height: 100%;
+  background-color: #111;
+  overflow-x: hidden;
+  position: fixed;
+  transition: 0.5s;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#sidebar ul li {
+  padding: 15px;
+  text-align: center;
+  color: #818181;
+}
+
+#sidebar ul li .icon,
+#sidebar ul li .text {
+  display: inline;
+}
+
+#sidebar ul li .text {
+  display: none;
+}
+
+.side-bar {
+  padding: 0;
+}
+
+.side-bar ul {
+  list-style: none;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: -20px;
+}
+
+.side-bar ul li {
+  background-color: transparent;
+  border: 1px solid black;
+  padding: 1rem;
+  margin-block: 1.5rem;
+}
+
+.side-bar ul li button {
+  text-decoration: none;
+  cursor: pointer;
+  color: whitesmoke;
+  font-size: 24px;
+  font-weight: 700;
+  border: none;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.side-bar ul li button:hover {
+  opacity: 0.7;
+}
+
+#heart-container,
+#diabetes-container {
+  display: none;
+}
