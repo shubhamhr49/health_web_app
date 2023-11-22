@@ -31,5 +31,5 @@ def predict_diabetes():
     return f"Diabetes Prediction: {'Positive' if prediction else 'Negative'}"
 
 
-if __name__ == "__main__":
-    app.run(port=5000)
+# if __name__ == "__main__":
+#     app.run(port=5000)
